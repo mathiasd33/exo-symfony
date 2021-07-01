@@ -24,7 +24,7 @@ class PageController
      * @Route ("/mention",name="mentionsLegales")
      */
     public function legales(){
-        var_dump('mentionsLegales'); die;
+        return new Response('mentions-legales');
     }
 
 }
