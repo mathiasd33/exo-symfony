@@ -18,9 +18,12 @@ class ArticleController extends AbstractController
         return new Response('articles');
     }
 
+    //@route = creation page
     /**
      * @Route ("/article/{id}", name="articleShow")
      */
+
+    //create function container a table with title, content and an id
     public function articleShow($id){
 
         $articles = [
@@ -46,6 +49,7 @@ class ArticleController extends AbstractController
             ]
         ];
 
+        //redirection to page html with render calling function
         $article = $articles[$id];
         return $this->render("articleShow.html.twig", [
             'article' => $article
