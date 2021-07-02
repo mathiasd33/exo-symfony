@@ -2,11 +2,12 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ArticleController
+class ArticleController extends AbstractController
 {
 
     /**
@@ -45,7 +46,9 @@ class ArticleController
             ]
         ];
 
-        $articles = $articles[$id];
-        return new Response("Le titre de l'article : ". $articles['title']);
+        $article = $articles[$id];
+        return $this->render("articleShow.html.twig", [
+            'article' => $article
+        ]);
     }
 }
