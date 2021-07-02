@@ -40,7 +40,7 @@ class ArticleController
             ],
             4 => [
                 "title" => "Balkany c'est pas trop génial",
-                "content" => "balblalblalb",
+                 "content" => "balblalblalb",
                 "id" => 4
             ]
         ];

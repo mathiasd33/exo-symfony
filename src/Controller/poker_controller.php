@@ -19,14 +19,14 @@ class poker_controller extends AbstractController
         $age = $request->query->get('age');
 
         if ($age >= 18) {
-            return $this->render("index.html");
+            return $this->render("poker.html");
         } else {
             //  redirection vers la route digimon
             // grâce à la méthode redirectToRoute qui existe dans
             // l'AbstractController
             // classe PageController hérite d'AbstractController
             // et méthode redirectToRoute en herite aussi
-            return $this->render("pokemon.html");
+            return $this->render("pokemon.html.");
         }
     }
 
