@@ -6,13 +6,29 @@
 
 .header{
     background: #5eb5e0;
-    height: 50px;
+    height: 80px;
 
 }
 
 .footer{
     background: orangered;
-    height: 50px
+    height: 80px
+}
+
+li{
+    list-style-type: none;
+}
+
+a{
+     text-decoration: none;
+     color: black;
+
+ }
+
+.nav_head ul{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 2%;
 }
 
 .flex{
@@ -33,8 +49,9 @@
     margin: 2%;
 }
 
-a{
-    text-decoration: none;
-    color: black;
-
+.nav_foot ul{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 2%;
 }
+
