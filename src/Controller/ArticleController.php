@@ -10,23 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ArticleController extends AbstractController
 {
 
-    /**
-     * @Route ("/articles", name="articles")
-     */
-    public function articlesListe()
-    {
-        return new Response('articles');
-    }
-
-    //@route = creation page
-    /**
-     * @Route ("/article/{id}", name="articleShow")
-     */
-
-    //create function container a table with title, content and an id
-    public function articleShow($id){
-
-        $articles = [
+          private $articles = [
             1 => [
                 "title" => "La vaccination c'est trop géniale",
                 "content" => "bablablblalba",
@@ -44,15 +28,34 @@ class ArticleController extends AbstractController
             ],
             4 => [
                 "title" => "Balkany c'est pas trop génial",
-                 "content" => "balblalblalb",
+                "content" => "balblalblalb",
                 "id" => 4
             ]
-        ];
+         ];
 
-        //redirection to page html with render calling function
-        $article = $articles[$id];
+
+    /**
+     * @Route ("/articles", name="articles")
+     */
+
+    public function articlesListe()
+    {
+        return $this->render('article_list.html.twig', [
+            'articles' =>$this->articles
+        ]);
+    }
+
+    //@route = creation page
+    /**
+     * @Route ("/article/{id}", name="articleShow")
+     */
+
+
+       //create function container a table with title, content and an id
+       public function articleShow($id){
+           //redirection to page html with render calling function
         return $this->render("articleShow.html.twig", [
-            'article' => $article
+            'article' => $this->articles[$id]
         ]);
     }
 }

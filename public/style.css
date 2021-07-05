@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header, footer{
+    background: #5eb5e0;
+    height: 50px;
+
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background: coral;
+
+}
+
+.article{
+    box-shadow: 10px 10px 10px black;
+    border: solid black 1px;
+    background: cadetblue;
+    border-radius: 10px;
+    width: 40%;
+    padding: 5% 2%;
+    margin: 2%;
+}
