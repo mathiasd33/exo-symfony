@@ -4,10 +4,15 @@
     box-sizing: border-box;
 }
 
-header, footer{
+.header{
     background: #5eb5e0;
     height: 50px;
 
+}
+
+.footer{
+    background: #5eb5e0;
+    height: 50px
 }
 
 .flex{
