@@ -1,18 +1,63 @@
-      {% include '_header.html.twig.html' %}
-        <div class="flex">
-         {% for article in articles %}
-             {% if article.published %}
-           <div class="article">
-               {# je génère un lien vers la route articleshow cette route
-                demande une wildcard 'id', donc je l'a renseigne avec l id de l'article bouclé#}
-               <a href={{ path ('articleShow',{'id' : article.id}) }} >
-                   <h1>{{article.title}}</h1>
-               </a>
+   {% extends 'base.html.twig' %}
 
-             <h2>{{article.content}}</h2>
-           </div>
-             {% endif %}
-            {% endfor %}
-         </div>
-      {% include '_footer.html.twig.html' %}
+   {% block metaTitle %}
+      Liste des articles
+   {% endblock metaTitle %}
+
+{% block header %}
+   <header class="header">
+       <div class="nav_head">
+           <nav>
+               <ul>
+                   <li>lien 1</li>
+                   <li>lien 2</li>
+                   <li>lien 3</li>
+                   <li>lien 4</li>
+                   <li>lien 5</li>
+                   <li>lien 6</li>
+               </ul>
+           </nav>
+       </div>
+   </header>
+
+{% endblock header %}
+
+
+{% block main %}
+   <main>
+       <div class="flex">
+           {% for article in articles %}
+               {% if article.published %}
+                   <div class="article">
+                       {# je génère un lien vers la route articleshow cette route
+                    demande une wildcard 'id', donc je l'a renseigne avec l id de l'article bouclé#}
+                       <a href={{ path ('articleShow',{'id' : article.id}) }} >
+                           <h1>{{article.title}}</h1>
+                       </a>
+                       <h2>{{article.content}}</h2>
+                   </div>
+               {% endif %}
+           {% endfor %}
+
+       </div>
+   </main>
+{% endblock main %}
+
+{% block foot %}
+   <footer class="footer">
+     <div class="nav_foot">
+         <nav>
+             <ul>
+                 <li>lien 1</li>
+                 <li>lien 2</li>
+                 <li>lien 3</li>
+                 <li>lien 4</li>
+                 <li>lien 5</li>
+                 <li>lien 6</li>
+             </ul>
+         </nav>
+     </div>
+   </footer>
+{% endblock foot %}
+
 

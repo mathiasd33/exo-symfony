@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block metaTitle %}{% endblock metaTitle %}</title>
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
+</head>
+
+<body>
+
+<header>
+    {% block header %}
+    {% endblock header %}
+</header>
+
+<main>
+
+    {%block main%}
+    {%endblock main%}
+
+</main>
+
+<footer>
+    {% block foot %}
+    {% endblock foot %}
+</footer>
+
+
+</body>
+</html>
