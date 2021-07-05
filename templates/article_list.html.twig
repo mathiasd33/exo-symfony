@@ -14,7 +14,12 @@
         <div class="flex">
          {% for article in articles %}
            <div class="article">
-             <h1>{{article.title}}</h1>
+               {# je génère un lien vers la route articleshow cette route
+               cette demande une wildcard 'id', donc je l'a renseigne avec l id l'article bouclé#}
+               <a href={{ path ('articleShow',{'id' : article.id}) }} >
+                   <h1>{{article.title}}</h1>
+               </a>
+
              <h2>{{article.content}}</h2>
            </div>
             {% endfor %}
